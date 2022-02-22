@@ -85,14 +85,13 @@ textarea:focus {
 .container {
   width: 100%;
   height: 100%;
-  padding: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .title {
+  margin-top: 50px;
   color: var(--white);
 }
 
@@ -103,11 +102,12 @@ textarea:focus {
   justify-content: flex-start;
   align-items: center;
   margin-top: 50px;
+  background-color: red;
 }
 
 .wrap {
   position: relative;
-  width: 80%;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -149,4 +149,56 @@ textarea:focus {
 
 #autoList li:hover{
   color: var(--main);
+}
+
+.content-wrap {
+  margin-top: 50px;
+  width: 80vw;
+  overflow: hidden;
+}
+
+#imageListWrap {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  place-items: start;
+}
+
+#imgListWrap li{
+  width: 100%;
+  height: 240px;
+  background-color: var(--sec-background);
+  border: 1px solid var(--border);
+}
+
+#imgListWrap li img{
+  object-fit: cover;
+  width: 100%;
+  height: 240px;
+  transition: all 0.4s ease-in-out;
+}
+
+@media (max-width: 1440px) {
+  #imageListWrap {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  #imageListWrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #imageListWrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  #imageListWrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
