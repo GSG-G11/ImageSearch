@@ -1,0 +1,146 @@
+:root {
+  --white: #ffffff;
+  --main: #B12025;
+  --active-background: #111317;
+  --sec-background: #171A1F;
+  --background: #0A0B0D;
+  --title: #E1E6F0;
+  --sub-title: #8B919C;
+  --placeholder: #B8BFCC;
+  --border: #1B1F26;
+  --between-border: #242933;
+  --icon: #F7FAFC;
+}
+
+[data-theme="dark"] {
+  --white: #000000;
+  --main: #b12025;
+  --active-background: #ffffff;
+  --sec-background: #fafafa;
+  --background: #ffffff;
+  --title: #b8bfcc;
+  --sub-title: #8b919c;
+  --placeholder: #b8bfcc;
+  --border: #e1e6f0;
+  --between-border: #e1e6f0;
+  --icon: #f7fafc;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Readex Pro", sans-serif;
+}
+
+input::placeholder {
+  font-family: "Readex Pro", sans-serif;
+}
+
+body {
+  font-family: "Readex Pro", sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main);
+}
+
+::selection {
+  background-color: var(--main);
+}
+
+select,
+button,
+button:focus,
+input,
+input:focus textarea,
+textarea:focus {
+  outline: none;
+  border: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: var(--white);
+}
+
+form {
+  width: 80%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.wrap {
+  position: relative;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchInput {
+  border: 1px solid var(--border);
+  padding: 15px;
+  width: 100%;
+  height: 60px;
+  background-color: var(--sec-background);
+}
+
+#searchBtn {
+  background-color: var(--main);
+  color: var(--white);
+  width: 20%;
+  height: 60px;
+  font-weight: 700;
+}
+
+#autoList {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  background-color: var(--sec-background);
+  width: 100%;
+}
+
+#autoList li {
+  font-size: .9rem;
+  font-weight: 200;
+  color: var(--white);
+  padding: 15px;
+}
