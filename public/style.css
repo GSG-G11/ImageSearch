@@ -165,14 +165,14 @@ textarea:focus {
   place-items: start;
 }
 
-#imgListWrap li{
+.item{
   width: 100%;
   height: 240px;
   background-color: var(--sec-background);
   border: 1px solid var(--border);
 }
 
-#imgListWrap li img{
+img{
   object-fit: cover;
   width: 100%;
   height: 240px;
