@@ -1,5 +1,6 @@
 const autoList = document.getElementById('autoList');
 const searchInput = document.getElementById('searchInput');
+const imageListWrap = document.getElementById('imageListWrap');
 
 const searchAuto = (categoriesArray) => {
   const searchList = categoriesArray.filter((item) => (item.toLowerCase().trim()).includes(searchInput.value.toLowerCase().trim()));
@@ -24,4 +25,18 @@ const manipulateDOM = (categoriesArray) => {
 const addToSearch = (item) => {
   searchInput.value = item.textContent;
   autoList.textContent = '';
-}
+};
+
+const getImages = (data) => {
+  imageListWrap.textContent = '';
+  data.results.forEach((img, index) => {
+    if (index % 2 === 0) {
+      const item = document.createElement('li');
+      const imgItem = document.createElement('img');
+      imgItem.setAttribute('src', `${img}`);
+      item.appendChild(imgItem);
+
+      imageListWrap.appendChild(item);
+    }
+  });
+};
