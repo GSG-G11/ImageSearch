@@ -129,6 +129,7 @@ textarea:focus {
   width: 20%;
   height: 60px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 #autoList {
