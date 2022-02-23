@@ -1,4 +1,5 @@
 const axios = require('axios');
+const serverError = require('./serverError');
 
 const handleRequestAPI = (word, res) => {
   axios
@@ -8,8 +9,7 @@ const handleRequestAPI = (word, res) => {
       res.end(JSON.stringify(response.data));
     })
     .catch(() => {
-      res.writeHead(500);
-      res.end('Error!!');
+      serverError(res);
     });
 };
 
