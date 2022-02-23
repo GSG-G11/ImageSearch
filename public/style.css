@@ -57,6 +57,7 @@ ul {
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -154,7 +155,7 @@ textarea:focus {
 }
 
 .content-wrap {
-  margin-top: 50px;
+  margin-top: 30px;
   width: 80vw;
   overflow: hidden;
 }
@@ -189,6 +190,37 @@ img{
   width: 100%;
   height: 240px;
   transition: all 0.4s ease-in-out;
+}
+
+.tags{
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.tag{
+  color: var(--white);
+  padding: 15px;
+  height: 50px;
+  font-weight: 200;
+  font-size: .9rem;
+  margin-left: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: var(--sec-background);
+}
+
+.tag:last-child{
+  margin-right: 20px;
+}
+
+.tag:hover{
+  background-color: var(--active-background);
+  color: var(--main);
 }
 
 @media (max-width: 1440px) {
