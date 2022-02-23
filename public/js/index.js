@@ -29,3 +29,21 @@ const switchTheme = () => {
 };
 
 themes.addEventListener('click', switchTheme);
+
+// Scroll to top button
+const scrollToTopBtn = document.querySelector('#scrollToTopBtn');
+const displayScrollToBtn = () => {
+  const y = window.scrollY;
+  if (y > 200) scrollToTopBtn.classList.replace('hide', 'show');
+  else scrollToTopBtn.classList.replace('show', 'hide');
+};
+window.addEventListener('scroll', displayScrollToBtn);
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth',
+  });
+};
+scrollToTopBtn.addEventListener('click', scrollToTop);
