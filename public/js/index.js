@@ -12,3 +12,5 @@ searchInput.addEventListener('keyup', (e) => {
 });
 
 searchBtn.addEventListener('click', () => { if (searchInput.value !== '') getData('Get', `/search/${searchInput.value}`, getImages, displayLoad); });
+
+document.addEventListener('click', (e) => { getData('Get', `/search/${e.target.textContent}`, getImages, displayLoad); });
