@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /* eslint-disable no-undef */
 getData('Get', '/home', getPicsumImages, displayLoad);
 
@@ -47,3 +48,17 @@ const scrollToTop = () => {
   });
 };
 scrollToTopBtn.addEventListener('click', scrollToTop);
+
+// Check The State Of Internet
+const stateInternet = document.querySelector('#stateInternet');
+const makeStateInternet = (word) => {
+  const stateOnline = word;
+  stateInternet.textContent = stateOnline;
+  stateInternet.style.display = 'block';
+  setTimeout(() => {
+    stateInternet.style.display = 'none';
+  }, 3000);
+};
+
+window.addEventListener('online', () => makeStateInternet(`You're Online`));
+window.addEventListener('offline', () => makeStateInternet(`You're Offline`));
