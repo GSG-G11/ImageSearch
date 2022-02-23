@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
+const serverError = require('./serverError');
 
-const handlePublic = (url, response) => {
+const handlePublic = (url, response, state) => {
   const filePath = path.join(__dirname, '..', '..', 'public', url);
   const extention = path.extname(url);
 
@@ -17,10 +18,9 @@ const handlePublic = (url, response) => {
 
   fs.readFile(filePath, (error, file) => {
     if (error) {
-      response.writeHead(500);
-      response.end('error');
+      serverError(response);
     } else {
-      response.writeHead(200, { 'Content-Type': contentType[extention] });
+      response.writeHead(state || 200, { 'Content-Type': contentType[extention] });
       response.end(file);
     }
   });

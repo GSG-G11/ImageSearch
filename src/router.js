@@ -1,6 +1,7 @@
 const handleFile = require('./handler/handleFile');
 const handlePublic = require('./handler/handlePublic');
 const handleRequestAPI = require('./handler/handleRequestAPI');
+const notFoundHandler = require('./handler/notFoundHandler');
 
 const router = (request, response) => {
   const endpoint = request.url;
@@ -17,8 +18,7 @@ const router = (request, response) => {
     const searchValue = request.url.split('search/')[1];
     handleRequestAPI(searchValue, response);
   } else {
-    response.writeHead(404);
-    response.end('Not Found');
+    notFoundHandler(response);
   }
 };
 
