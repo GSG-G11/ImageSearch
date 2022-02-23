@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="Dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -18,7 +18,13 @@
 <body>
   <div class="container">
     <h6><span class="load">Loading...</span></h6>
-    <h1 class="title">Image Search</h1>
+    <div class="wrap-title">
+      <h1 class="title">Image Search</h1>
+      <div>
+        <input type="checkbox" id="themes">
+        <label for="themes" id="themesLabel">Dark</label>
+      </div>
+    </div>
     <div class="form">
       <div class="wrap">
         <input type="search" id="searchInput" name="search" placeholder="search" required />

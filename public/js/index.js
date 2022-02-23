@@ -11,6 +11,21 @@ searchInput.addEventListener('keyup', (e) => {
   }
 });
 
-searchBtn.addEventListener('click', () => { if (searchInput.value !== '') getData('Get', `/search/${searchInput.value}`, getImages, displayLoad); });
+searchBtn.addEventListener('click', () => {
+  if (searchInput.value !== '') getData('Get', `/search/${searchInput.value}`, getImages, displayLoad);
+});
 
-document.addEventListener('click', (e) => { getData('Get', `/search/${e.target.textContent}`, getImages, displayLoad); });
+document.addEventListener('click', (e) => {
+  if (e.target.getAttribute('class') === 'tag') getData('Get', `/search/${e.target.textContent}`, getImages, displayLoad);
+});
+
+const themes = document.getElementById('themes');
+const themesLabel = document.getElementById('themesLabel');
+const switchTheme = () => {
+  const dataTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = dataTheme === 'Dark' ? 'Light' : 'Dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  themesLabel.textContent = newTheme;
+};
+
+themes.addEventListener('click', switchTheme);
