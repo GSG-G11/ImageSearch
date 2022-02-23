@@ -19,6 +19,7 @@ Image search is an online portal and Web-based services that collect and indexes
 API | Description | Auth | HTTPS | CORS |
 |---|---|---|---|---|
 | [Imsea](https://imsea.herokuapp.com/) | Free image search | No | Yes | Unknown |
+| [Lorem Picsum](https://picsum.photos/) | Images from Unsplash | No | Yes | Unknown |
 
 ## ✧ <span id='Journey'>User Journey</span>
 

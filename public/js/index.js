@@ -25,7 +25,7 @@ const switchTheme = () => {
   const dataTheme = document.documentElement.getAttribute('data-theme');
   const newTheme = dataTheme === 'Dark' ? 'Light' : 'Dark';
   document.documentElement.setAttribute('data-theme', newTheme);
-  themesLabel.textContent = newTheme;
+  themesLabel.textContent = dataTheme;
 };
 
 themes.addEventListener('click', switchTheme);

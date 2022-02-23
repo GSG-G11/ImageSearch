@@ -91,10 +91,6 @@ textarea:focus {
   margin-top: 50px;
 }
 
-#themesLabel {
-  color: var(--white);
-}
-
 .container {
   position: relative;
   width: 100%;
@@ -106,6 +102,39 @@ textarea:focus {
 
 .title {
   color: var(--white);
+}
+
+.wrap-check{
+  display: flex;
+  align-items: center;
+}
+
+#themes{
+  appearance: none;
+  background-image: url( https://e.top4top.io/p_2245ym00k1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  background-color: var(--sec-background);
+  border: 1px solid var(--border);
+}
+
+#themes:checked{
+  background-image: url(https://f.top4top.io/p_2245daw7x2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  background-color: var(--sec-background);
+  border: 1px solid var(--border);
+}
+
+#themesLabel {
+  color: var(--white);
+  margin-left: 10px;
 }
 
 .form {
@@ -214,6 +243,7 @@ img {
 }
 
 .tag {
+  border: 1px solid var(--border);
   color: var(--white);
   padding: 15px;
   height: 50px;
