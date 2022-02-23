@@ -16,7 +16,11 @@ const router = (request, response) => {
     handleFile(response);
   } else if (endpoint.includes('search')) {
     const searchValue = request.url.split('search/')[1];
-    handleRequestAPI(searchValue, response);
+    const apiUrl = `https://imsea.herokuapp.com/api/1?q=${searchValue}`;
+    handleRequestAPI(apiUrl, response);
+  } else if (endpoint === '/home') {
+    const apiUrlPicsum = 'https://picsum.photos/v2/list';
+    handleRequestAPI(apiUrlPicsum, response);
   } else {
     notFoundHandler(response);
   }

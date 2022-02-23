@@ -1,9 +1,18 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 const autoList = document.getElementById('autoList');
 const searchInput = document.getElementById('searchInput');
 const imageListWrap = document.getElementById('imageListWrap');
+const load = document.querySelector('.load');
+
+const displayLoad = () => {
+  imageListWrap.textContent = '';
+  load.style.display = 'block';
+};
 
 const searchAuto = (categoriesArray) => {
-  const searchList = categoriesArray.filter((item) => (item.toLowerCase().trim()).includes(searchInput.value.toLowerCase().trim()));
+  const searchList = categoriesArray
+    .filter((item) => (item.toLowerCase().trim()).includes(searchInput.value.toLowerCase().trim()));
   return searchList;
 };
 
@@ -39,5 +48,17 @@ const getImages = (data) => {
 
       imageListWrap.appendChild(item);
     }
+  });
+};
+
+const getPicsumImages = (data) => {
+  imageListWrap.textContent = '';
+  data.forEach((img) => {
+    const item = document.createElement('li');
+    item.className = 'item';
+    const imgItem = document.createElement('img');
+    imgItem.setAttribute('src', `${img.download_url}`);
+    item.appendChild(imgItem);
+    imageListWrap.appendChild(item);
   });
 };
