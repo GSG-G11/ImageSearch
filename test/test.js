@@ -61,3 +61,14 @@ test('get json file', (done) => {
       return done();
     });
 });
+
+test('Test not found case', (done) => {
+  supertest(router)
+    .get('/zz')
+    .expect(404)
+    .end((err, res) => {
+      if (err) return done(err);
+      expect(res.statusCode).toBe(404);
+      return done();
+    });
+});
