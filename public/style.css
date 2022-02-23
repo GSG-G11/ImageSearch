@@ -333,20 +333,12 @@ img {
 }
 
 @media (max-width: 768px) {
-  .container {
-    width: 90vw;
-  }
-
   #imageListWrap {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 500px) {
-  .container {
-    width: 90vw;
-  }
-
   #imageListWrap {
     grid-template-columns: repeat(1, 1fr);
   }
