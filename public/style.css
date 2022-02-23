@@ -1,18 +1,18 @@
 :root {
   --white: #ffffff;
-  --main: #B12025;
+  --main: #b12025;
   --active-background: #111317;
-  --sec-background: #171A1F;
-  --background: #0A0B0D;
-  --title: #E1E6F0;
-  --sub-title: #8B919C;
-  --placeholder: #B8BFCC;
-  --border: #1B1F26;
+  --sec-background: #171a1f;
+  --background: #0a0b0d;
+  --title: #e1e6f0;
+  --sub-title: #8b919c;
+  --placeholder: #b8bfcc;
+  --border: #1b1f26;
   --between-border: #242933;
-  --icon: #F7FAFC;
+  --icon: #f7fafc;
 }
 
-[data-theme="dark"] {
+[data-theme='Light'] {
   --white: #000000;
   --main: #b12025;
   --active-background: #ffffff;
@@ -36,15 +36,15 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Readex Pro", sans-serif;
+  font-family: 'Readex Pro', sans-serif;
 }
 
 input::placeholder {
-  font-family: "Readex Pro", sans-serif;
+  font-family: 'Readex Pro', sans-serif;
 }
 
 body {
-  font-family: "Readex Pro", sans-serif;
+  font-family: 'Readex Pro', sans-serif;
   width: 100%;
   height: 100%;
   background-color: var(--background);
@@ -83,6 +83,18 @@ textarea:focus {
   border: none;
 }
 
+.wrap-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  margin-top: 50px;
+}
+
+#themesLabel {
+  color: var(--white);
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -93,7 +105,6 @@ textarea:focus {
 }
 
 .title {
-  margin-top: 50px;
   color: var(--white);
 }
 
@@ -143,14 +154,14 @@ textarea:focus {
 }
 
 #autoList li {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 200;
   color: var(--white);
   padding: 15px;
   cursor: pointer;
 }
 
-#autoList li:hover{
+#autoList li:hover {
   color: var(--main);
 }
 
@@ -168,7 +179,7 @@ textarea:focus {
   place-items: start;
 }
 
-.load{
+.load {
   display: none;
   position: absolute;
   left: 50%;
@@ -178,21 +189,21 @@ textarea:focus {
   font-size: 1.5rem;
 }
 
-.item{
+.item {
   width: 100%;
   height: 240px;
   background-color: var(--sec-background);
   border: 1px solid var(--border);
 }
 
-img{
+img {
   object-fit: cover;
   width: 100%;
   height: 240px;
   transition: all 0.4s ease-in-out;
 }
 
-.tags{
+.tags {
   width: 80vw;
   display: flex;
   align-items: center;
@@ -202,23 +213,23 @@ img{
   overflow-y: hidden;
 }
 
-.tag{
+.tag {
   color: var(--white);
   padding: 15px;
   height: 50px;
   font-weight: 200;
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin-left: 20px;
   border-radius: 50px;
   cursor: pointer;
   background-color: var(--sec-background);
 }
 
-.tag:last-child{
+.tag:last-child {
   margin-right: 20px;
 }
 
-.tag:hover{
+.tag:hover {
   background-color: var(--active-background);
   color: var(--main);
 }
