@@ -44,6 +44,7 @@ const getImages = (data) => {
       item.className = 'item';
       const imgItem = document.createElement('img');
       imgItem.setAttribute('src', `${img}`);
+      imgItem.setAttribute('loading', 'lazy');
       item.appendChild(imgItem);
 
       imageListWrap.appendChild(item);
@@ -58,6 +59,7 @@ const getPicsumImages = (data) => {
     item.className = 'item';
     const imgItem = document.createElement('img');
     imgItem.setAttribute('src', `${img.download_url}`);
+    imgItem.setAttribute('loading', 'lazy');
     item.appendChild(imgItem);
     imageListWrap.appendChild(item);
   });
