@@ -7,9 +7,8 @@ const searchBtn = document.getElementById('searchBtn');
 searchInput.addEventListener('keyup', (e) => {
   autoList.textContent = '';
   getData('Get', '/auto', manipulateDOM, displayLoad);
-  if (searchInput.value !== '' && e.key === 'Enter') {
-    getData('Get', `/search/${searchInput.value}`, getImages, displayLoad);
-  }
+  if (searchInput.value !== '' && e.key === 'Enter') getData('Get', `/search/${searchInput.value}`, getImages, displayLoad);
+  else if (searchInput.value === '') getData('Get', '/home', getPicsumImages, displayLoad);
 });
 
 searchBtn.addEventListener('click', () => {
