@@ -1,6 +1,6 @@
 /* eslint-disable quotes */
 /* eslint-disable no-undef */
-getData('Get', '/home', getPicsumImages, displayLoad);
+window.addEventListener('load', () => getData('Get', '/home', getPicsumImages, displayLoad));
 
 /* eslint-disable no-undef */
 const searchBtn = document.getElementById('searchBtn');
@@ -13,22 +13,59 @@ searchInput.addEventListener('keyup', (e) => {
 });
 
 searchBtn.addEventListener('click', () => {
-  if (searchInput.value !== '') getData('Get', `/search/${searchInput.value}`, getImages, displayLoad);
+  if (searchInput.value !== '') {
+    autoList.textContent = '';
+    getData('Get', `/search/${searchInput.value}`, getImages, displayLoad);
+  }
 });
 
+// Add Event To Tags
+const tags = document.querySelectorAll('.tag');
 document.addEventListener('click', (e) => {
-  if (e.target.getAttribute('class') === 'tag') getData('Get', `/search/${e.target.textContent}`, getImages, displayLoad);
+  // eslint-disable-next-line no-param-reassign
+  tags.forEach((tag) => { tag.style.backgroundColor = 'var(--background)'; });
+  if (e.target.getAttribute('class') === 'tag') {
+    e.target.style.backgroundColor = 'var(--main)';
+    getData('Get', `/search/${e.target.textContent}`, getImages, displayLoad);
+  }
 });
 
+// Check The Theme Of Browser
 const themes = document.getElementById('themes');
 const themesLabel = document.getElementById('themesLabel');
-const switchTheme = () => {
-  const dataTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = dataTheme === 'Dark' ? 'Light' : 'Dark';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  themesLabel.textContent = dataTheme;
+
+const switchToDark = () => {
+  themes.checked = false;
+  themes.style.backgroundImage = 'url( https://e.top4top.io/p_2245ym00k1.png)';
+  themesLabel.textContent = 'Light';
+  document.documentElement.setAttribute('data-theme', 'Dark');
 };
 
+const switchToLight = () => {
+  themes.checked = false;
+  themes.style.backgroundImage = 'url(https://f.top4top.io/p_2245daw7x2.png)';
+  themesLabel.textContent = 'Dark';
+  document.documentElement.setAttribute('data-theme', 'Light');
+};
+
+const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+if (dark) switchToDark();
+else switchToLight();
+
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+  if (e.matches) switchToDark();
+});
+
+window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
+  if (e.matches) switchToLight();
+});
+
+// Switch The Theme Mode
+const switchTheme = () => {
+  const dataTheme = document.documentElement.getAttribute('data-theme');
+  if (dataTheme === 'Dark') switchToLight();
+  else switchToDark();
+};
 themes.addEventListener('click', switchTheme);
 
 // Scroll to top button
